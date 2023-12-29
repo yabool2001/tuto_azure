@@ -1,7 +1,10 @@
 // Na podstawie JavaScript Promises In 10 Minutes (https://www.youtube.com/watch?v=DHvZLI7Db8E) by Web Dev Simplified
 
+
+// Scenariusz 1:
+
 // Opcja z resolve () i then
-const quest = {"q": "a"}
+let quest = {"q": "a"}
 
 // Opcja z reject () i catch
 //const quest = {"w": "a"}
@@ -26,6 +29,40 @@ let p = new Promise
 )
 
 p.then
+(
+    ( r ) => console.log ( r )
+).catch
+(
+    ( r ) => console.log ( r )
+)
+
+
+
+// Scenariusz 2:
+
+quest = {"w": "a"}
+
+function f ()
+{
+    return new Promise 
+    (
+        ( resolve , reject ) =>
+        {
+            if ( 'q' in quest )
+            {
+                // Jeśli udało mi się odczytać wartość, to używam resolve
+                resolve ( `Wartość q = ${quest.q}` )
+            }
+            else
+            {
+                // Jeśli nie udało mi się odczytać wartość, to zwracam reject
+                reject ( "No data" )
+            }
+        }
+    )
+}
+
+f().then
 (
     ( r ) => console.log ( r )
 ).catch
