@@ -1,9 +1,9 @@
 // First example with classic function
     
-function one ( callback ) 
+function one ( callback1 ) 
 {
     console.log ( "step 1" ) ;
-    callback () ;
+    callback1 () ;
 }
 
 function two ()
@@ -13,17 +13,19 @@ function two ()
 
 one ( two ) ;
 
-// Second example with arrow function
+// Second example with arrow function and additionally setTimeout
     
-let third = ( call_fourth ) => 
+let third = ( callback2 ) => 
 {
-    console.log ( "third" ) ;
-    call_fourth () ; 
+    setTimeout ( () => { 
+        console.log ( "step 3" ) ;
+        callback2 () ;
+    } , 0 )
 }
 
 let fourth = () => 
 {
-    console.log ( "fourth" ) ;
+    console.log ( "step 4" ) ;
 }
 
 third ( fourth ) ;
