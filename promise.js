@@ -1,13 +1,8 @@
 // Na podstawie JavaScript Promises In 10 Minutes (https://www.youtube.com/watch?v=DHvZLI7Db8E) by Web Dev Simplified
 
 
-// Scenariusz 1:
-
-// Opcja z resolve () i then
+// Scenariusz 1 z resolve:
 let quest = {"q": "a"}
-
-// Opcja z reject () i catch
-//const quest = {"w": "a"}
 
 let p = new Promise
 (
@@ -38,8 +33,7 @@ p.then
 
 
 
-// Scenariusz 2:
-
+// Scenariusz 2 z reject:
 quest = {"w": "a"}
 
 function f ()
